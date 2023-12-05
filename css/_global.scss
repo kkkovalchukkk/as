@@ -1,0 +1,35 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $mainFont;
+  min-width: 320px;
+  background-color: $white;
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+.page {
+  width: 100%;
+  min-height: 100%;
+}
+
+section {
+  margin-bottom: 120px;
+  padding: 0px 40px;
+  @media (max-width: 1359px) {
+    padding: 0px 30px;
+  }
+  
+}
+
+.no-scroll {
+  overflow: hidden;
+}
