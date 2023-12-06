@@ -188,8 +188,11 @@ section {
   overflow: hidden;
 }
 .mobile-menu {
+  position: relative;
   @include fluid(padding-top, 130px, 160px);
   // display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   padding-right: 20px;
   padding-bottom: 60px;
@@ -1645,6 +1648,7 @@ h2 {
       right: 60px;
     }
     h2.popup__heading {
+      padding-right: 64px;
       margin-bottom: 120px;
       max-width: 935px;
       font-size: 48px;
@@ -2022,6 +2026,9 @@ h2 {
     padding: 0;
     cursor: pointer;
     transition: $defaultTransitionTime;
+    &:focus {
+      outline: none;
+    }
     &:hover {
       transform: scale(1.05);
     }
@@ -2154,7 +2161,7 @@ h2 {
         font-size: 18px;
         top: -3px;
         left: 0;
-        transition: transform 200ms, color 200ms;
+        transition: $defaultTransitionTime;
         span {
           color: red;
         }
@@ -2186,7 +2193,10 @@ h2 {
     }
     &:focus ~ .label,  /* фокус на input */
     &:not(:placeholder-shown) ~ .label  /* в input есть значение */ {
-      transform: translateY(-20px) scale(0.75) translateX(-10px);
+      // transform: scale(0.75);
+      font-size: 12px;
+      left: 0px;
+      top: -19px;
       color: rgba(27, 23, 25, 0.6);
     }
     &-error {
@@ -2241,7 +2251,9 @@ h2 {
     }
     &:focus ~ .label,  /* фокус на input */
     &:not(:placeholder-shown) ~ .label  /* в input есть значение */ {
-      transform: translateY(-20px) scale(0.75) translateX(-30px);
+      font-size: 12px;
+      left: 0px;
+      top: -19px;
       color: rgba(27, 23, 25, 0.6);
     }
   }
@@ -4485,6 +4497,11 @@ h2 {
       color: #01684f;
     }
   }
+  .projects-section {
+    &__text {
+      display: initial;
+    }
+  }
 }
 
 @media (max-width: 919px) {
@@ -4750,7 +4767,8 @@ h2 {
       justify-content: center;
     }
     h2.popup__heading {
-      margin-top: 50px;
+      margin-top: 20px;
+      padding-right: 96px;
       margin-bottom: 60px;
       font-size: 30px;
     }
@@ -4838,6 +4856,26 @@ h2 {
   }
 }
 @media (max-width: 525px) {
+  .projects-section {
+    &__wrapper {
+      gap: 0;
+    }
+    &__text {
+      display: inline-block;
+      margin-bottom: 60px;
+    }
+  }
+
+  .page-section__text-content ul li {
+    font-size: 16px;
+  }
+
+  .link {
+    white-space: initial;
+    max-width: 239px;
+    line-height: 135%;
+  }
+
   .header {
     padding-top: 20px;
   }
@@ -4929,7 +4967,7 @@ h2 {
       height: 280px;
     }
     &__card-list {
-      row-gap: 30px;
+      row-gap: 60px;
     }
     &__card-text {
       font-size: 16px;
@@ -5175,6 +5213,7 @@ h2 {
     &__nav {
       gap: 43px;
       text-align: unset;
+      margin-bottom: 72px;
       &-link {
         font-size: 21px;
       }
@@ -5195,7 +5234,15 @@ h2 {
     border-radius: 0;
     .popup__close-btn {
       right: 14px;
-      top: 30px;
+      top: 33px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .popup__heading {
+      max-width: 258px;
+      margin-top: 0 !important;
     }
   }
   .popup {
@@ -5300,13 +5347,13 @@ h2 {
       }
     }
     &__list {
-      gap: 60px;
+      gap: 65px;
       &-item-heading-field {
         margin-bottom: 34px;
       }
     }
     &__heading {
-      margin-bottom: 73px !important;
+      // margin-bottom: 73px !important;
     }
   }
   .contacts-section {
@@ -5638,7 +5685,7 @@ h2 {
     }
 
     &__list {
-      gap: 19px;
+      // gap: 19px;
     }
     &__card {
       &-list {
@@ -5685,6 +5732,7 @@ h2 {
     &__go-back {
       display: flex;
       margin-top: 21px;
+      transform: translateX(-5px);
     }
   }
 
@@ -5696,6 +5744,7 @@ h2 {
       display: flex;
       margin-top: 22px;
       margin-bottom: 23px;
+      transform: translateX(-5px);
     }
   }
 
@@ -5714,6 +5763,26 @@ h2 {
 
   .company-section__player {
     height: 230px;
+  }
+
+  .form__footer-col {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .project-section {
+    &__breadcrumbs {
+      display: none;
+    }
+  }
+  .page-section__text-content p a {
+    font-size: 16px;
+  }
+  .free-section__table-cell {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

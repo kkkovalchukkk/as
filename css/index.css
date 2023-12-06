@@ -362,7 +362,10 @@ section {
 }
 
 .mobile-menu {
+  position: relative;
   padding-top: 130px;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   padding-right: 20px;
   padding-bottom: 60px;
@@ -1732,6 +1735,7 @@ h2 {
   right: 60px;
 }
 .popup--vacancy h2.popup__heading {
+  padding-right: 64px;
   margin-bottom: 120px;
   max-width: 935px;
   font-size: 48px;
@@ -2130,6 +2134,9 @@ h2 {
   cursor: pointer;
   transition: 0.23s;
 }
+.project-section__swiper-navigation-btn:focus {
+  outline: none;
+}
 .project-section__swiper-navigation-btn:hover {
   transform: scale(1.05);
 }
@@ -2256,7 +2263,7 @@ h2 {
   font-size: 18px;
   top: -3px;
   left: 0;
-  transition: transform 200ms, color 200ms;
+  transition: 0.23s;
 }
 .form__row-wrap .label span {
   color: red;
@@ -2289,11 +2296,15 @@ h2 {
   border-bottom: 1px solid #000;
 }
 .form__input:not(:-moz-placeholder-shown) ~ .label {
-  transform: translateY(-20px) scale(0.75) translateX(-10px);
+  font-size: 12px;
+  left: 0px;
+  top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
 .form__input:focus ~ .label, .form__input:not(:placeholder-shown) ~ .label {
-  transform: translateY(-20px) scale(0.75) translateX(-10px);
+  font-size: 12px;
+  left: 0px;
+  top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
 .form__input-error {
@@ -2343,11 +2354,15 @@ h2 {
   border-bottom: 1px solid #000;
 }
 .form__textarea:not(:-moz-placeholder-shown) ~ .label {
-  transform: translateY(-20px) scale(0.75) translateX(-30px);
+  font-size: 12px;
+  left: 0px;
+  top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
 .form__textarea:focus ~ .label, .form__textarea:not(:placeholder-shown) ~ .label {
-  transform: translateY(-20px) scale(0.75) translateX(-30px);
+  font-size: 12px;
+  left: 0px;
+  top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
 .form__footer {
@@ -4422,6 +4437,9 @@ h2 {
   .table__link {
     color: #01684f;
   }
+  .projects-section__text {
+    display: initial;
+  }
 }
 @media (max-width: 919px) {
   .process-section__col-group {
@@ -4633,7 +4651,8 @@ h2 {
     justify-content: center;
   }
   .popup h2.popup__heading {
-    margin-top: 50px;
+    margin-top: 20px;
+    padding-right: 96px;
     margin-bottom: 60px;
     font-size: 30px;
   }
@@ -4695,6 +4714,21 @@ h2 {
   }
 }
 @media (max-width: 525px) {
+  .projects-section__wrapper {
+    gap: 0;
+  }
+  .projects-section__text {
+    display: inline-block;
+    margin-bottom: 60px;
+  }
+  .page-section__text-content ul li {
+    font-size: 16px;
+  }
+  .link {
+    white-space: initial;
+    max-width: 239px;
+    line-height: 135%;
+  }
   .header {
     padding-top: 20px;
   }
@@ -4773,7 +4807,7 @@ h2 {
     height: 280px;
   }
   .culture-section__card-list {
-    row-gap: 30px;
+    row-gap: 60px;
   }
   .culture-section__card-text {
     font-size: 16px;
@@ -4986,6 +5020,7 @@ h2 {
   .mobile-menu__nav {
     gap: 43px;
     text-align: unset;
+    margin-bottom: 72px;
   }
   .mobile-menu__nav-link {
     font-size: 21px;
@@ -5005,7 +5040,15 @@ h2 {
   }
   .popup--vacancy .popup__close-btn {
     right: 14px;
-    top: 30px;
+    top: 33px;
+  }
+  .popup--vacancy .popup__close-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .popup--vacancy .popup__heading {
+    max-width: 258px;
+    margin-top: 0 !important;
   }
   .popup__header {
     flex-direction: column;
@@ -5081,13 +5124,10 @@ h2 {
     height: 280px;
   }
   .projects-section__list {
-    gap: 60px;
+    gap: 65px;
   }
   .projects-section__list-item-heading-field {
     margin-bottom: 34px;
-  }
-  .projects-section__heading {
-    margin-bottom: 73px !important;
   }
   .contacts-section {
     margin-top: 40px;
@@ -5386,9 +5426,6 @@ h2 {
   .projects-section__nav-link {
     padding: 8px 12px;
   }
-  .projects-section__list {
-    gap: 19px;
-  }
   .projects-section__card-list {
     gap: 47px;
   }
@@ -5425,6 +5462,7 @@ h2 {
   .offer-section__go-back {
     display: flex;
     margin-top: 21px;
+    transform: translateX(-5px);
   }
   .detail-section__breadcrumbs {
     display: none;
@@ -5433,6 +5471,7 @@ h2 {
     display: flex;
     margin-top: 22px;
     margin-bottom: 23px;
+    transform: translateX(-5px);
   }
   .overlay--contacts {
     padding-left: 0;
@@ -5446,6 +5485,22 @@ h2 {
   }
   .company-section__player {
     height: 230px;
+  }
+  .form__footer-col {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .project-section__breadcrumbs {
+    display: none;
+  }
+  .page-section__text-content p a {
+    font-size: 16px;
+  }
+  .free-section__table-cell {
+    margin-bottom: 20px;
+  }
+  .free-section__table-cell:last-child {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 400px) {
