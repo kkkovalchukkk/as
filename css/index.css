@@ -193,13 +193,13 @@ section {
 .burger__btn span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #000000;
   transition: all 0.3s;
   position: relative;
 }
 .burger span + span {
-  margin-top: 7px;
+  margin-top: 4px;
 }
 .burger-active {
   position: fixed;
@@ -1690,6 +1690,10 @@ h2 {
   max-width: 530px;
   width: 100%;
 }
+.popup__form .form__btn:hover {
+  background-color: #015641;
+  color: #fafafa;
+}
 .popup__form .form__row {
   margin-bottom: 60px;
 }
@@ -2270,6 +2274,7 @@ h2 {
 }
 .form__input {
   width: 100%;
+  border-radius: 0;
   border: none;
   background: none;
   color: #1b1719;
@@ -2297,13 +2302,13 @@ h2 {
 }
 .form__input:not(:-moz-placeholder-shown) ~ .label {
   font-size: 12px;
-  left: 0px;
+  left: 1px;
   top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
 .form__input:focus ~ .label, .form__input:not(:placeholder-shown) ~ .label {
   font-size: 12px;
-  left: 0px;
+  left: 1px;
   top: -19px;
   color: rgba(27, 23, 25, 0.6);
 }
@@ -2401,7 +2406,12 @@ h2 {
   line-height: 24px;
   letter-spacing: -0.54px;
   text-decoration-line: underline;
+  text-decoration-color: transparent;
+  transition: 0.23s;
   cursor: pointer;
+}
+.form__file-label:hover {
+  text-decoration-color: #2f8b46;
 }
 .form__file-label--hidden {
   text-decoration: none;
@@ -2422,6 +2432,10 @@ h2 {
   font-weight: 600;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.54px;
+}
+.form__btn:hover {
+  background-color: #015641;
+  color: #fafafa;
 }
 
 .offers-section {
@@ -2694,29 +2708,18 @@ h2 {
 }
 .detail-section__gallery-card-image-wrapper {
   width: 100%;
-  height: 450px;
 }
 .detail-section__gallery-card-image-wrapper:hover + a + .detail-section__gallery-card-heading {
   text-decoration-color: #1b1719;
 }
 .detail-section__gallery-card-image {
-  height: 310px;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
   transition: 0.23s;
-}
-@media (min-width: 1360px) {
-  .detail-section__gallery-card-image {
-    height: calc(0.25 * 100vw + -30px);
-  }
-}
-@media (min-width: 1920px) {
-  .detail-section__gallery-card-image {
-    height: 450px;
-  }
 }
 .detail-section__gallery-card-heading {
   text-decoration: underline;
@@ -4347,8 +4350,8 @@ h2 {
 }
 @media (max-width: 920px) {
   .header__mobile-menu svg {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
   .popup__player-zoom-btn {
     bottom: -30%;
@@ -4745,6 +4748,17 @@ h2 {
   .form__file-label--hidden {
     display: block;
   }
+  .popup--vacancy .form__file-label--hidden {
+    color: rgba(0, 0, 0, 0.5);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.48px;
+  }
   .team-section__subheading {
     margin-bottom: 40px;
   }
@@ -5037,10 +5051,11 @@ h2 {
   }
   .popup--vacancy {
     border-radius: 0;
+    padding: 20px;
   }
   .popup--vacancy .popup__close-btn {
     right: 14px;
-    top: 33px;
+    top: 20px;
   }
   .popup--vacancy .popup__close-btn svg {
     width: 24px;
@@ -5056,7 +5071,7 @@ h2 {
     gap: 20px;
   }
   .popup__header-item {
-    gap: 10px;
+    gap: 2px;
   }
   .popup__body {
     padding-bottom: 30px;
@@ -5485,6 +5500,12 @@ h2 {
   }
   .company-section__player {
     height: 230px;
+  }
+  .popup--vacancy .form__footer-col {
+    margin-bottom: 0;
+  }
+  .popup--vacancy .form__footer button {
+    margin-top: 40px;
   }
   .form__footer-col {
     gap: 12px;

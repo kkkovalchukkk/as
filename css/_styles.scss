@@ -8,14 +8,14 @@
     span {
       display: block;
       width: 100%;
-      height: 3px;
+      height: 2px;
       background: #000000;
       transition: all 0.3s;
       position: relative;
     }
   }
   span + span {
-    margin-top: 7px;
+    margin-top: 4px;
   }
 
   &-active {
@@ -1600,6 +1600,10 @@ h2 {
     .form__btn {
       max-width: 530px;
       width: 100%;
+      &:hover {
+        background-color: #015641;
+        color: $white;
+      }
     }
     .form__row {
       margin-bottom: 60px;
@@ -2172,6 +2176,7 @@ h2 {
   &__input {
     width: 100%;
     // padding-bottom: 14px;
+    border-radius: 0;
     border: none;
     background: none;
     color: $black;
@@ -2195,7 +2200,7 @@ h2 {
     &:not(:placeholder-shown) ~ .label  /* в input есть значение */ {
       // transform: scale(0.75);
       font-size: 12px;
-      left: 0px;
+      left: 1px;
       top: -19px;
       color: rgba(27, 23, 25, 0.6);
     }
@@ -2296,6 +2301,11 @@ h2 {
     line-height: 24px;
     letter-spacing: -0.54px;
     text-decoration-line: underline;
+    text-decoration-color: transparent;
+    transition: $defaultTransitionTime;
+    &:hover {
+      text-decoration-color: $green;
+    }
     cursor: pointer;
     &--hidden {
       text-decoration: none;
@@ -2318,6 +2328,10 @@ h2 {
     font-weight: 600;
     line-height: 24px; /* 133.333% */
     letter-spacing: -0.54px;
+    &:hover {
+      background-color: #015641;
+      color: $white;
+    }
   }
 }
 
@@ -2592,7 +2606,8 @@ h2 {
 
   &__gallery-card-image-wrapper {
     width: 100%;
-    height: 450px;
+    // height: 450px;
+    // @include fluid(height, 310px, 450px);
     @extend .works-section__gallery-card-image-wrapper;
     &:hover {
       & + a + .detail-section__gallery-card-heading {
@@ -2602,8 +2617,8 @@ h2 {
   }
 
   &__gallery-card-image {
-    @include fluid(height, 310px, 450px);
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     transition: $defaultTransitionTime;
@@ -4381,8 +4396,8 @@ h2 {
   .header {
     &__mobile-menu {
       svg {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
       }
     }
   }
@@ -4896,6 +4911,20 @@ h2 {
   .form__file-label--hidden {
     display: block;
   }
+
+  .popup--vacancy {
+    .form__file-label--hidden {
+      color: rgba(0, 0, 0, 0.5);
+      leading-trim: both;
+      text-edge: cap;
+      font-family: $mainFont;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 150% */
+      letter-spacing: -0.48px;
+    }
+  }
   .team-section__subheading {
     margin-bottom: 40px;
   }
@@ -5232,9 +5261,10 @@ h2 {
 
   .popup--vacancy {
     border-radius: 0;
+    padding: 20px;
     .popup__close-btn {
       right: 14px;
-      top: 33px;
+      top: 20px;
       svg {
         width: 24px;
         height: 24px;
@@ -5251,7 +5281,7 @@ h2 {
       align-items: start;
       gap: 20px;
       &-item {
-        gap: 10px;
+        gap: 2px;
       }
     }
     &__body {
@@ -5763,6 +5793,15 @@ h2 {
 
   .company-section__player {
     height: 230px;
+  }
+
+  .popup--vacancy {
+    .form__footer-col {
+      margin-bottom: 0;
+    }
+    .form__footer button {
+      margin-top: 40px;
+    }
   }
 
   .form__footer-col {
