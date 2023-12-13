@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -2300,13 +2301,7 @@ h2 {
   outline: none;
   border-bottom: 1px solid #000;
 }
-.form__input:not(:-moz-placeholder-shown) ~ .label {
-  font-size: 12px;
-  left: 1px;
-  top: -19px;
-  color: rgba(27, 23, 25, 0.6);
-}
-.form__input:focus ~ .label, .form__input:not(:placeholder-shown) ~ .label {
+.form__input.focused ~ .label { /* фокус на input */
   font-size: 12px;
   left: 1px;
   top: -19px;
@@ -3542,6 +3537,11 @@ h2 {
   width: 100%;
   margin-bottom: 120px;
 }
+@media (max-width: 525px) {
+  .free-section__table {
+    margin-bottom: 80px;
+  }
+}
 .free-section__table-header {
   width: 100%;
   padding-bottom: 20px;
@@ -3644,6 +3644,14 @@ h2 {
   line-height: 34px;
   letter-spacing: -0.9px;
 }
+@media (max-width: 525px) {
+  .free-section__text {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.6px;
+  }
+}
 .free-section__group {
   display: flex;
   flex-direction: column;
@@ -3657,6 +3665,11 @@ h2 {
   align-items: flex-start;
   justify-content: start;
   gap: 24px;
+}
+@media (max-width: 525px) {
+  .free-section__group-item {
+    gap: 8px;
+  }
 }
 .free-section__group-item-heading {
   color: rgba(0, 0, 0, 0.5);
@@ -3685,6 +3698,11 @@ h2 {
 }
 .free-section__group-item-link:hover {
   text-decoration-color: #1b1719;
+}
+@media (max-width: 525px) {
+  .free-section__group-item-link {
+    font-size: 20px;
+  }
 }
 
 .page-section {
@@ -4238,8 +4256,8 @@ h2 {
     gap: 30px;
   }
   .header__mobile-menu svg {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
   }
   .works-section__heading-field {
     align-items: start;
@@ -4359,6 +4377,13 @@ h2 {
   .free-section__row {
     flex-direction: column;
   }
+}
+@media (max-width: 920px) and (max-width: 525px) {
+  .free-section__row {
+    gap: 60px;
+  }
+}
+@media (max-width: 920px) {
   .free-section__table-header {
     display: none;
   }
@@ -4369,6 +4394,14 @@ h2 {
     background: #f5f5f5;
     width: 48%;
     grid-template-columns: 100%;
+    background-image: url("../assets/svg/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: top 34px right 18px;
+  }
+  .free-section__table-row:hover {
+    background-repeat: no-repeat;
+    background-position: top 34px right 18px;
+    background-image: url("../assets/svg/arrow-right.svg");
   }
   .free-section__table-body {
     display: flex;
@@ -4383,6 +4416,7 @@ h2 {
   }
   .free-section__table-cell--bold {
     margin-bottom: 30px;
+    padding-right: 32px;
   }
   .form-section__wrapper {
     flex-direction: column;
@@ -4808,11 +4842,12 @@ h2 {
     margin-bottom: 30px;
   }
   .free-section__table-cell--bold {
-    font-size: 20px;
+    max-width: 300px;
     color: #01684f;
+    font-size: 20px;
   }
   .free-section__table-cell--hidden {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
   .free-section__heading {
     margin-bottom: 45px !important;
@@ -5516,6 +5551,12 @@ h2 {
   }
   .page-section__text-content p a {
     font-size: 16px;
+  }
+  .free-section__table-row {
+    background-position: top 35px right 18px;
+  }
+  .free-section__table-row:hover {
+    background-position: top 35px right 18px;
   }
   .free-section__table-cell {
     margin-bottom: 20px;

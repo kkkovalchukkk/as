@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+  const inputEls = document.querySelectorAll('input');
+
   const registrationFormEl = document.querySelector('#form-registration');
   const registrationBtn = document.querySelector('#form-btn');
   const intranceFormEl = document.querySelector('#form-intrance');
@@ -36,6 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
       if (!checkInputValidity(input)) {
         input.parentElement.classList.add('invalid');
         return;
+      } else {
+        input.parentElement.classList.remove('invalid');
       }
     });
 
@@ -65,9 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   registrationTelInputEl?.addEventListener('input', () => {
-    console.log(registrationTelInputEl.value.length);
-
-    if (registrationTelInputEl.value.length < 16) {
+    if (!registrationTelInputEl.value) {
       registrationTelInputEl.parentElement.classList.add('invalid');
       return;
     } else {
@@ -86,15 +88,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  registrationFormEl?.addEventListener('submit', submitRegistrationForm);
-});
+  inputEls.forEach((i) =>
+    i.addEventListener('focus', () => {
+      !i.value && i.classList.add('focused');
+    })
+  );
+  inputEls.forEach((i) =>
+    i.addEventListener('blur', () => {
+      !i.value && i.classList.remove('focused');
+    })
+  );
 
-window.addEventListener('load', () => {
-  if (document.querySelector('[name="tel"]')) {
-    const element = document.querySelector('[name="tel"]');
-    const maskOptions = {
-      mask: '+{7} 000 000 00 00',
-    };
-    const mask = IMask(element, maskOptions);
-  }
+  registrationFormEl?.addEventListener('submit', submitRegistrationForm);
 });
