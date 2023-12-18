@@ -2287,6 +2287,7 @@ h2 {
   letter-spacing: -0.54px;
   border-bottom: 1px solid #1b1719;
   transition: all 0.38 ease-in-out;
+  padding-left: 0;
 }
 .form__input::-moz-placeholder {
   color: #1b1719;
@@ -2301,7 +2302,8 @@ h2 {
   outline: none;
   border-bottom: 1px solid #000;
 }
-.form__input.focused ~ .label { /* фокус на input */
+.form__input.focused ~ .label {
+  /* фокус на input */
   font-size: 12px;
   left: 1px;
   top: -19px;
