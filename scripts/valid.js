@@ -29,6 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
   );
   const intranceErrorEl = intranceFormEl?.querySelector('.form__error');
 
+  const telInputEls = document.querySelectorAll('input[name="tel"]');
+
   const checkInputValidity = (input) => input.value;
 
   const submitRegistrationForm = (e) => {
@@ -98,6 +100,13 @@ window.addEventListener('DOMContentLoaded', () => {
       !i.value && i.classList.remove('focused');
     })
   );
+
+  telInputEls.forEach((i) => {
+    i.addEventListener('input', () => {
+      i.value = i.value.replace(/\D/g, '');
+      console.log(i);
+    });
+  });
 
   registrationFormEl?.addEventListener('submit', submitRegistrationForm);
 });
